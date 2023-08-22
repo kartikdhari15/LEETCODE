@@ -14,8 +14,6 @@ public:
         ListNode *dummy, *temp;
         dummy = new ListNode();
         temp = dummy;
-        
-        //when both list1 and list2 isn't empty
         while(list1 && list2){
             if(list1->val < list2->val){
                 temp->next = list1;
@@ -27,11 +25,8 @@ public:
             }
             temp = temp->next;
         }
-        
-        // we reached at the end of one of the list
         if(list1) temp->next = list1;
         if(list2) temp->next = list2;
-        
         return dummy->next;
     }
 };
